@@ -1,3 +1,4 @@
+
 # halite-bot
 Halite AI Programming Challenge Bot designed by "team.getName(aCoolName)" team during the semester project for the Algorithms Design course (2nd year).
 
@@ -6,6 +7,8 @@ Halite AI Programming Challenge Bot designed by "team.getName(aCoolName)" team d
 ## Versions:
 
 ### v1: 
+The goal of this bot was only to cover the entire map, not to fight other bots. We run through the map only once - Complexity O(n^3):
+* We search for every site that is ours if there are any neighbour sites that are not ours. For locations with different IDs, there are two cases: one cannot attack the other location and one stays STILL or the smallest enemy that can be conquered will be attacked. If nearby sites are of the same id, you want to redirect them to the nearest edge, bringing "reinforcements" to the closest border. To avoid a chaotic move to the border, an evaluation is made for each frame. Successive evaluations avoid moving into already fixed area that may have been attacked in the meantime.
 
 ### v2:
 We changed the whole strategy, trying to achieve a more aggressive expansion. We run through the map twice - Complexity O(n^3):
